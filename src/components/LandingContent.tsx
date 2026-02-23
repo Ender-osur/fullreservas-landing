@@ -255,9 +255,11 @@ export function LandingContent() {
                   {t.hero.subtitle}
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground dark:text-primary-50 leading-relaxed shadow-aurora p-4 rounded-full bg-primary-50 dark:bg-primary-900">
-                {t.hero.description}
-              </p>
+              <div className="inline-block pl-6 border-l-4 border-primary-500 py-3 pr-4 rounded-r backdrop-blur-md bg-white/50 dark:bg-black/50">
+                <p className="text-xl md:text-2xl text-muted-foreground dark:text-primary-50 leading-relaxed m-0">
+                  {t.hero.description}
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button
                   size="lg"
