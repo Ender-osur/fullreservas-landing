@@ -255,7 +255,7 @@ export function LandingContent() {
                   {t.hero.subtitle}
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-muted-foreground dark:text-primary-50 leading-relaxed shadow-aurora p-4 rounded-full bg-primary-50 dark:bg-primary-900">
                 {t.hero.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
