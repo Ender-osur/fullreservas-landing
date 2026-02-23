@@ -123,13 +123,13 @@ export function Navbar({
 
             <div className="hidden md:flex items-center space-x-2">
               <Button variant="ghost" asChild>
-                <a href="/login">{translations.login}</a>
+                <a href="https://app.fullreservas.net/es/auth/login">{translations.login}</a>
               </Button>
               <Button
                 className="bg-primary-500 text-secondary-500 hover:bg-primary-500/90"
                 asChild
               >
-                <a href="/register">{translations.register}</a>
+                <a href="https://app.fullreservas.net/es/auth/register">{translations.register}</a>
               </Button>
             </div>
 
@@ -188,13 +188,13 @@ export function Navbar({
               </div>
               <div className="flex flex-col space-y-2 pt-3">
                 <Button variant="outline" asChild className="w-full">
-                  <a href="/login">{translations.login}</a>
+                  <a href="https://app.fullreservas.net/es/auth/login">{translations.login}</a>
                 </Button>
                 <Button
                   className="bg-primary-500 text-secondary-500 hover:bg-primary-500/90 w-full"
                   asChild
                 >
-                  <a href="/register">{translations.register}</a>
+                  <a href="https://app.fullreservas.net/es/auth/register">{translations.register}</a>
                 </Button>
               </div>
             </div>
