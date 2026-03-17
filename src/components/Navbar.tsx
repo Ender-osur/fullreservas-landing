@@ -11,6 +11,7 @@ import {
 interface NavbarProps {
   translations: {
     home: string;
+    bento?: string;
     features: string;
     pricing: string;
     contact: string;
@@ -47,8 +48,18 @@ export function Navbar({
     localStorage.setItem("theme", newTheme);
   };
 
-  const navLinks = [
+  const NavSeparator = () => (
+    <div
+      className="h-5 w-px mx-4 bg-primary-500/60 shrink-0 hidden md:block"
+      aria-hidden
+    />
+  );
+
+  const navLinks: { href: string; label: string }[] = [
     { href: "#home", label: translations.home },
+    ...(translations.bento
+      ? [{ href: "#bento", label: translations.bento }]
+      : []),
     { href: "#features", label: translations.features },
     { href: "#pricing", label: translations.pricing },
     { href: "#contact", label: translations.contact },
@@ -65,21 +76,22 @@ export function Navbar({
             >
               Fullreservas.net
             </a>
-
-            <div className="hidden md:flex items-center space-x-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground hover:text-primary-500 transition-colors font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+          </div>
+          <NavSeparator />
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-foreground hover:text-primary-500 transition-colors font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           <div className="flex items-center space-x-3">
+            <NavSeparator />
             <div className="flex items-center space-x-0">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -120,16 +132,20 @@ export function Navbar({
                 )}
               </Button>
             </div>
-
+            <NavSeparator />
             <div className="hidden md:flex items-center space-x-2">
               <Button variant="ghost" asChild>
-                <a href="https://app.fullreservas.net/es/auth/login">{translations.login}</a>
+                <a href="https://app.fullreservas.net/es/auth/login">
+                  {translations.login}
+                </a>
               </Button>
               <Button
                 className="bg-primary-500 text-secondary-500 hover:bg-primary-500/90"
                 asChild
               >
-                <a href="https://app.fullreservas.net/es/auth/register">{translations.register}</a>
+                <a href="https://app.fullreservas.net/es/auth/register">
+                  {translations.register}
+                </a>
               </Button>
             </div>
 
@@ -186,15 +202,19 @@ export function Navbar({
                   )}
                 </Button>
               </div>
-              <div className="flex flex-col space-y-2 pt-3">
+              <div className="flex flex-col space-y-2 pt-3 border-t border-border">
                 <Button variant="outline" asChild className="w-full">
-                  <a href="https://app.fullreservas.net/es/auth/login">{translations.login}</a>
+                  <a href="https://app.fullreservas.net/es/auth/login">
+                    {translations.login}
+                  </a>
                 </Button>
                 <Button
                   className="bg-primary-500 text-secondary-500 hover:bg-primary-500/90 w-full"
                   asChild
                 >
-                  <a href="https://app.fullreservas.net/es/auth/register">{translations.register}</a>
+                  <a href="https://app.fullreservas.net/es/auth/register">
+                    {translations.register}
+                  </a>
                 </Button>
               </div>
             </div>
